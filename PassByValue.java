@@ -38,6 +38,21 @@ public class PassByValue{
         System.out.println("  Inside method - after changes: " + student);
     }
     
+     public static void replaceStudent(Student student) {
+        System.out.println("  Inside method - received: " + student);
+        
+        // Try to reassign the reference to a brand new Student object
+        student = new Student("Charlie", 4);
+        
+        System.out.println("  Inside method - reassigned to: " + student);
+        System.out.println("  Inside method - modifying the new student...");
+        
+        // Modify the new student
+        student.name = "Charlie (Modified)";
+        student.grade = 5;
+        
+        System.out.println("  Inside method - after modification: " + student);
+    }
 
 
     public static void main(String[] args) {
@@ -62,6 +77,11 @@ public class PassByValue{
         
          System.out.println("\nCalling promoteStudent method:");
         promoteStudent(myStudent);
+        
+        System.out.println("\nBack in main: " + myStudent);
+         // Pass student to method that tries to replace it
+        System.out.println("\nCalling replaceStudent method:");
+        replaceStudent(myStudent);
         
         System.out.println("\nBack in main: " + myStudent);
     }
