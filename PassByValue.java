@@ -7,6 +7,25 @@ public class PassByValue{
         System.out.println("  Inside method - changed number to: " + number);
     }
     
+      static class Student {
+        String name;
+        int grade;
+        
+        public Student(String name, int grade) {
+            this.name = name;
+            this.grade = grade;
+        }
+        
+        @Override
+        public String toString() {
+            return "Student{name='" + name + "', grade=" + grade + "}";
+        }
+    }
+
+
+     public static void displayStudent(Student student) {
+        System.out.println("  Inside method - received student: " + student);
+    }
     public static void main(String[] args) {
         System.out.println("=== PRIMITIVE PASS-BY-VALUE ===");
         
@@ -16,10 +35,16 @@ public class PassByValue{
         tryToChangeNumber(myNumber);
         
         System.out.println("After method call: myNumber = " + myNumber);
+         System.out.println("===  INTRODUCING STUDENT OBJECT ===");
+           // Create a student object
+        Student myStudent = new Student("Rumba Test", 12);
+        System.out.println("Created student: " + myStudent);
         
-        System.out.println("\nExplanation:");
-        System.out.println("- Java passed a COPY of myNumber's value (13) to the method");
-        System.out.println("- The method changed its local copy to 1");
-        System.out.println("- The original myNumber remains unchanged at 13");
+        // Pass the student to a method
+        System.out.println("\nCalling displayStudent method:");
+        displayStudent(myStudent);
+        
+        System.out.println("\nBack in main: " + myStudent);
+        
     }
 }
