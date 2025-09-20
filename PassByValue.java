@@ -1,11 +1,6 @@
 public class PassByValue {
 
-    // Method that receives a copy of the primitive value
-    public static void tryToChangeNumber(int number) {
-        System.out.println("  Inside method - received number: " + number);
-        number = 1; // This changes only the local copy
-        System.out.println("  Inside method - changed number to: " + number);
-    }
+   
 
     public static class Student {
         String name;
@@ -21,7 +16,12 @@ public class PassByValue {
             return "Student{name='" + name + "', grade=" + grade + "}";
         }
     }
-
+     // Method that receives a copy of the primitive value
+    public static void tryToChangeNumber(int number) {
+        System.out.println("  Inside method - received number: " + number);
+        number = 1; // This changes only the local copy
+        System.out.println("  Inside method - changed number to: " + number);
+    }
     public static void displayStudent(Student student) {
         System.out.println("  Inside method - received student: " + student);
     }
