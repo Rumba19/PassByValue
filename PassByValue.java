@@ -7,7 +7,7 @@ public class PassByValue{
         System.out.println("  Inside method - changed number to: " + number);
     }
     
-      static class Student {
+      public static class Student {
         String name;
         int grade;
         
@@ -26,6 +26,20 @@ public class PassByValue{
      public static void displayStudent(Student student) {
         System.out.println("  Inside method - received student: " + student);
     }
+
+    // Method that modifies the student's properties
+    public static void promoteStudent(Student student) {
+        System.out.println("  Inside method - received: " + student);
+        
+        // Modify the student's properties
+        student.name = student.name + " (Promoted)";
+        student.grade = student.grade + 1;
+        
+        System.out.println("  Inside method - after changes: " + student);
+    }
+    
+
+
     public static void main(String[] args) {
         System.out.println("=== PRIMITIVE PASS-BY-VALUE ===");
         
@@ -46,5 +60,9 @@ public class PassByValue{
         
         System.out.println("\nBack in main: " + myStudent);
         
+         System.out.println("\nCalling promoteStudent method:");
+        promoteStudent(myStudent);
+        
+        System.out.println("\nBack in main: " + myStudent);
     }
 }
