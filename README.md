@@ -30,6 +30,5 @@ The program will demonstrate that Java passes everything by value, showing:
 - Primitive variables remain unchanged after method calls
 - Object contents can be modified through reference parameters
 - Reference reassignment attempts fail to affect the original variable
-
+![image](image.png)
 This proves Java's consistent pass-by-value behavior across all data types.
-![image](image.png)``
