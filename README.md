@@ -21,7 +21,7 @@ java PassByValue
 ```
 **Option 2: IDE**
 
-- Import the PassByValue.java file
+- Import the `PassByValue.java` file
 - Run the main method
 
 **Expected Output**
